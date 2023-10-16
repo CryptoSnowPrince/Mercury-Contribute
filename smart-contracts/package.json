@@ -1,0 +1,10 @@
+{
+  "name": "contribute-smart-contracts",
+  "dependencies": {
+    "@openzeppelin/contracts": "^4.9.3",
+    "hardhat": "^2.17.3"
+  },
+  "devDependencies": {
+    "@nomicfoundation/hardhat-toolbox": "^3.0.0"
+  }
+}
