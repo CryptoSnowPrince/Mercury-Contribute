@@ -1,13 +1,18 @@
 # Sample Hardhat Project
 
-This project demonstrates a basic Hardhat use case. It comes with a sample contract, a test for that contract, and a script that deploys that contract.
+## Goerli Testnet
 
-Try running some of the following tasks:
+```text
+MockUSDT: 0x10cB7737c5A547B71C25c3f2dbF12A1BD6374cf4
 
-```shell
-npx hardhat help
-npx hardhat test
-REPORT_GAS=true npx hardhat test
-npx hardhat node
-npx hardhat run scripts/deploy.js
+Implement: 0x4192BeddD9340cac086E919EBeceBa576ABB7714
+ProxyAdmin: 0x3Baad934b73878C0747b3720D854eEAe811F58A8
+    initialize
+    uint256 _startTimeWL: 1697503000
+    uint256 _startTimeALL: 1697506000
+    uint256 _limitETH: 1000000000000000000 (1 ETH)
+    uint256 _limitUSDT: 1000000000 (1000 USDT)
+    address _usdt: 0x10cB7737c5A547B71C25c3f2dbF12A1BD6374cf4
+_DATA: 0xccd6529600000000000000000000000000000000000000000000000000000000652dd71800000000000000000000000000000000000000000000000000000000652de2d00000000000000000000000000000000000000000000000000de0b6b3a7640000000000000000000000000000000000000000000000000000000000003b9aca0000000000000000000000000010cb7737c5a547b71c25c3f2dbf12a1bd6374cf4
+TransparentUpgradeableProxy: 0x8D42C96208c2C2f5CD8b856eb87CEdEB0e102cAf
 ```
