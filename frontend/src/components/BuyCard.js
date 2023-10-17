@@ -9,20 +9,20 @@ export default function BuyCard(props) {
                 <label>{`You are ${props.isWL ? 'whitelisted!' : 'non-whitelisted!'}`}</label>
             </div>
             {
-                props && props.tokenBalance.length === global.TOKENS.length && global.TOKENS.map((value, key) => {
+                props && global.TOKENS.map((value, key) => {
                     return <BuyItem
                         key={key}
                         token={value}
                         setRefresh={props.setRefresh}
                         refresh={props.refresh}
                         isWL={props.isWL}
-                        userVolume={props.userVolume[key].status === 'success'
+                        userVolume={props.userVolume[key]?.status === 'success'
                             ? parseFloat(formatUnits(props.userVolume[key]?.result, value.decimals))
                             : 0}
-                        tokenBalance={props.tokenBalance[key].status === 'success'
+                        tokenBalance={props.tokenBalance[key]?.status === 'success'
                             ? parseFloat(formatUnits(props.tokenBalance[key]?.result, value.decimals))
                             : 0}
-                        allowance={props.allowance[key].status === 'success'
+                        allowance={props.allowance[key]?.status === 'success'
                             ? parseFloat(formatUnits(props.allowance[key]?.result, value.decimals))
                             : 0}
                         ethBalance={props.ethBalance} />

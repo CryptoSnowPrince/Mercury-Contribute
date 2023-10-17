@@ -231,7 +231,7 @@ export default function BuyItem(props) {
                     </div>
                     <div className="w-full px-3 flex flex-row items-center justify-start text-sm text-center">
                         <div className="flex flex-row items-center justify-end gap-2 text-center">
-                            <label>Balance: {formatNumber(props.tokenBalance)} </label>
+                            <label>{`Balance: ${formatNumber(props.tokenBalance)} ${props.token.name}`}</label>
                             <button
                                 className={`${pending ? `text-yellow-800` : `text-yellow-400`}`}
                                 disabled={pending}
