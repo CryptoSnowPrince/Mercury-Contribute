@@ -1,6 +1,6 @@
 import { ConnectButton } from '@rainbow-me/rainbowkit';
 
-export const YourApp = () => {
+export const ConnectWallet = () => {
     return (
         <ConnectButton.Custom>
             {({

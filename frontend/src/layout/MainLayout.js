@@ -1,14 +1,12 @@
-import Header from "./header/Header";
-import Community from "./community"
-import About from './about'
+import Header from "./header/header";
+import Footer from "./footer/footer";
 
 export default function MainLayout(props) {
   return (
-    <div>
+    <div className="flex flex-col h-screen">
       <Header />
-      <div className="relative min-h-[calc(100vh-200px)] container mx-auto">{props.children}</div>
-      <About />
-      <Community />
+      <main className="mb-auto text-white">{props.children}</main>
+      <Footer />
     </div>
   );
 }

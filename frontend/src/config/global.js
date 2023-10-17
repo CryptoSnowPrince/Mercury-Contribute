@@ -1,6 +1,6 @@
 import { mainnet, goerli } from "wagmi/chains";
 
-export const IS_PRODUCT_MODE = true // TODO
+export const IS_PRODUCT_MODE = false // TODO
 
 export const contracts_mainnet = {
     NFT: "0x13FCd668F9CFEE44abC9B3278f6530F7bee8eb2F" // TODO Mainnet ethereum

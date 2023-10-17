@@ -4,7 +4,6 @@ import { Link } from "react-router-dom";
 import { Typography, MenuItem } from "@material-tailwind/react";
 
 import { menuItems } from "../../../config/menu";
-import { getAccount } from "@wagmi/core"
 
 export default function NavListItem(props) {
   return (
@@ -13,7 +12,7 @@ export default function NavListItem(props) {
         {menuItems.map((menu, key) =>
           <Link
             key={menu.label}
-            to={menu.label === "MY NFTS" ? `${menu.link}/${getAccount().address ? getAccount().address : ''}` : menu.link}
+            to={menu.link}
             target={menu.target !== undefined ? menu.target : "_self"}
             onClick={() => {
               if (menu.self) {
