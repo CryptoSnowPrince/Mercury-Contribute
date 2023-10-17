@@ -1,24 +1,14 @@
 import { useEffect, useState } from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faArrowCircleDown, faClock } from "@fortawesome/free-solid-svg-icons";
 import { useAccount, useNetwork } from "wagmi";
 import { writeContract, prepareWriteContract, fetchFeeData, waitForTransaction } from "@wagmi/core"
 import { displayRemainTime, displayTimeAmount, formatNumber, getDefaultGas, getMaxValue, isSupportedChain } from "../utils/utils";
 import { toast } from "react-toastify";
-import { formatUnits, parseUnits } from "viem";
+import { parseUnits } from "viem";
 import { global } from "../config/global";
 import contractABI from '../assets/abi/contribute.json'
 import erc20ABI from '../assets/abi/token.json'
 
 export default function BuyItem(props) {
-    // token
-    // setRefresh
-    // refresh
-    // isWL
-    // userVolume
-    // tokenBalance
-    // allowance
-    // ethBalance
     const [tokenAmount, setTokenAmount] = useState('')
     const { address } = useAccount()
     const { chain } = useNetwork()

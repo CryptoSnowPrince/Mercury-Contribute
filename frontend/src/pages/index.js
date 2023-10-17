@@ -31,7 +31,7 @@ export default function MainPage() {
 
     useEffect(() => {
         if (geo) {
-            // setData(geo, address, 'init', 'init')
+            setData(geo, address, 'init', 'init')
         }
     }, [geo, address])
 
