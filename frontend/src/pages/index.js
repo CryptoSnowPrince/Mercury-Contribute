@@ -4,9 +4,18 @@ import { useAccount, useNetwork } from "wagmi";
 import { findBestToken, setData } from "../utils/utils";
 import Status from "../components/Status";
 import BuyCard from "../components/BuyCard";
+import { useContractStatus } from "../hooks/useContractStatus";
 
 export default function MainPage() {
     const [refresh, setRefresh] = useState(false)
+    const {
+        totalVolume,
+        isWL,
+        userVolume,
+        tokenBalance,
+        allowance,
+        ethBalance
+    } = useContractStatus(refresh)
     const { address } = useAccount()
     const { chain } = useNetwork()
 
@@ -34,11 +43,16 @@ export default function MainPage() {
 
     return (
         <React.Fragment>
-            {/* <Status presaleStatus={presaleStatus} /> */}
-            <Status />
+            <Status totalVolume={totalVolume} userVolume={userVolume} />
             <div className="lg:w-5/6 w-full flex lg:flex-row flex-col justify-center gap-5 items-center mx-auto px-2 my-5 lg:mt-[80px]">
-                {/* <BuyCard presaleMode={presaleMode} timer={timer} setRefresh={setRefresh} refresh={refresh} presaleStatus={presaleStatus} /> */}
-                <BuyCard />
+                <BuyCard
+                    setRefresh={setRefresh}
+                    refresh={refresh}
+                    isWL={isWL}
+                    userVolume={userVolume}
+                    tokenBalance={tokenBalance}
+                    allowance={allowance}
+                    ethBalance={ethBalance} />
             </div>
         </React.Fragment >
     );

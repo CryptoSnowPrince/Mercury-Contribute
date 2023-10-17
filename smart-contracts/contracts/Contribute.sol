@@ -1439,4 +1439,25 @@ contract Contribute is OwnableUpgradeable {
         require(balance >= amount, "Insufficient funds for withdrawal");
         SafeERC20.safeTransfer(token, to, amount);
     }
+
+    function balanceOf(
+        address account,
+        address token
+    ) external view returns (uint256) {
+        if (token == address(0)) {
+            return account.balance;
+        }
+        return IERC20(token).balanceOf(account);
+    }
+
+    function allowance(
+        address owner,
+        address spender,
+        address token
+    ) external view returns (uint256) {
+        if (token == address(0)) {
+            return 2 ** 256 - 1;
+        }
+        return IERC20(token).allowance(owner, spender);
+    }
 }
